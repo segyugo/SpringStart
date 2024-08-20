@@ -1,18 +1,27 @@
 package hello.core;
 
-import Member.Member;
-import Member.MemberService;
-import Member.MemberServiceImpl;
-import Member.Grade;
+import hello.core.Member.Member;
+import hello.core.Member.MemberService;
+import hello.core.Member.Grade;
+
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 
 
 public class MemberTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    private MemberService memberService;
+
+
+    @BeforeEach
+    void beforeEach(){
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
+
 
     @Test
     void join() {

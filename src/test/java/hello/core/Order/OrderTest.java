@@ -1,21 +1,26 @@
 package hello.core.Order;
 
-import Member.Member;
-import Member.Grade;
-import Member.MemberService;
-import Member.MemberServiceImpl;
-import Order.Order;
-import Order.OrderService;
-import Order.OrderServiceImpl;
+import hello.core.AppConfig;
+import hello.core.Member.Member;
+import hello.core.Member.Grade;
+import hello.core.Member.MemberService;
+import hello.core.Member.MemberServiceImpl;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.internal.matchers.Or;
 
 public class OrderTest {
 
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService;
+    OrderService orderService;
 
-    OrderService orderService = new OrderServiceImpl();
+    @BeforeEach
+    void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+
+        memberService = appConfig.memberService();
+        orderService = appConfig.orderService();
+    }
 
     @Test
     void createOrder() {

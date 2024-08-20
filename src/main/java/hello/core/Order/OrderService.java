@@ -1,6 +1,4 @@
-package Order;
-
-import Member.Member;
+package hello.core.Order;
 
 public interface OrderService {
 

@@ -1,9 +1,7 @@
 package hello.core.Discount;
 
-import Discount.RateDiscountPolicy;
-import Member.Member;
-import Member.Grade;
-import org.assertj.core.api.Assertions;
+import hello.core.Member.Member;
+import hello.core.Member.Grade;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

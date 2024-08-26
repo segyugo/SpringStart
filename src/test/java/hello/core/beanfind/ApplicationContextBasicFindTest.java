@@ -32,7 +32,7 @@ public class ApplicationContextBasicFindTest {
     }
 
     @Test
-    @DisplayName("이름 없이 특정 빈 조회")
+    @DisplayName("없는 빈 조회시 오류")
     void canNotfindBean() {
         assertThrows(NoSuchBeanDefinitionException.class,
                 () -> AC.getBean("xxx", MemberService.class));

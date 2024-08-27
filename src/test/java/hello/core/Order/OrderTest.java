@@ -29,7 +29,7 @@ public class OrderTest {
 
         Order order = orderService.createOrder(1L, "연필", 1500);
 
-        Assertions.assertThat(order.calculatePrice()).isEqualTo(500);
+        Assertions.assertThat(order.calculatePrice()).isEqualTo(1350);
 
     }
 
